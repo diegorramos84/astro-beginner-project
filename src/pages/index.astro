@@ -1,15 +1,52 @@
 ---
+// @ts-ignore
+import Main from "../layouts/Main.astro"
+
+const profilePicture = "https://i.imgur.com/JPGFE75.jpg"
+
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Main>
+  <div class="profile">
+    <div>
+      <img
+        src={profilePicture}
+        class="profile_picture"
+        alt="Frau Katerina's headshot."
+        width="100px"
+        height="100px"
+      >
+    </div>
+    <div class="profile_details">
+      <h1>Frau Katerina</h1>
+      <h2>VP of Engineering at Google</h2>
+      <p>
+        Helping developers be excellent and succed at building scalable products
+      </p>
+    </div>
+
+  </div>
+</Main>
+
+
+<style>
+  .profile {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem 0 3rem 0;
+  }
+
+  .profile_details {
+    flex: 1 0 300px;
+  }
+
+  .profile_details > h1 {
+    margin-top: 0;
+  }
+
+  .profile_picture {
+    border-radius: 50%;
+    margin: 0 2rem 1rem 0;
+  }
+</style>
